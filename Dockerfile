@@ -1,6 +1,9 @@
-FROM debian:jessie
+# base image for RDKit builds
+# currently uses jessie-backports as openjdk-8-jdk not available on vanilla jessie
+FROM debian:jessie-backports
+
 MAINTAINER Tim Dudgeon <tdudgeon@informaticsmatters.com>
-# WARNING this takes about an hour to build
+
 
 RUN apt-get update && apt-get install -y \
  build-essential\
@@ -18,4 +21,5 @@ RUN apt-get update && apt-get install -y \
  swig2.0\
  git\
  wget\
- zip
+ zip &&\
+ apt-get upgrade -y
