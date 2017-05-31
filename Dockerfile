@@ -1,9 +1,6 @@
 # base image for RDKit builds
-# currently uses jessie-backports as openjdk-8-jdk not available on vanilla jessie
-FROM debian:jessie-backports
-
+FROM debian:stretch
 MAINTAINER Tim Dudgeon <tdudgeon@informaticsmatters.com>
-
 
 RUN apt-get update && apt-get install -y \
  build-essential\
@@ -18,8 +15,12 @@ RUN apt-get update && apt-get install -y \
  libboost-serialization-dev\
  libboost-python-dev\
  libboost-regex-dev\
- swig2.0\
+ swig\
  git\
  wget\
  zip &&\
- apt-get upgrade -y
+ apt-get upgrade -y &&\
+ apt-get clean -y
+ 
+# add the rdkit user, but don't switch to it yet 
+RUN useradd rdkit 
