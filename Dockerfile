@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
  python-numpy\
  cmake\
  python-dev\
+ python-pip\
  sqlite3\
  libsqlite3-dev\
  libboost-dev\
