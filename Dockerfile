@@ -24,4 +24,4 @@ RUN apt-get update && apt-get install -y \
  apt-get clean -y
  
 # add the rdkit user, but don't switch to it yet 
-RUN useradd rdkit 
+RUN useradd -m rdkit 
