@@ -1,5 +1,5 @@
 # base image for RDKit builds
-FROM debian:stretch
+FROM debian:buster
 MAINTAINER Tim Dudgeon <tdudgeon@informaticsmatters.com>
 
 RUN apt-get update && apt-get install -y \
